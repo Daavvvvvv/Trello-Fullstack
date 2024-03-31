@@ -35,3 +35,5 @@ The easiest way to deploy your Next.js app is to use the [Vercel Platform](https
 
 Check out our [Next.js deployment documentation](https://nextjs.org/docs/deployment) for more details.
 # Trello-Fullstack
+
+On this app we are using [CN-UI](https://ui.shadcn.com/), that is a component library, wich is very compatible with next routine
