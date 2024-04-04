@@ -11,41 +11,41 @@ export const Navbar = () => {
           <Logo />
         </div>
         <Button
-        variant={"primary"}
+          variant={"primary"}
           size="sm"
           className="rounded-sm hidden md:block h-auto py-1.5 px-2">
           Create
         </Button>
-        <Button size="sm" className="rounded-sm block md:hidden">
-          <Plus className="h-4 w-4" />
+        <Button size="sm" className="rounded-sm block md:hidden bg-sky-800">
+          <Plus className="h-4 w-4 " />
         </Button>
       </div>
       <div className="ml-auto flex items-center gap-x-2">
         <OrganizationSwitcher
-        hidePersonal
-        afterCreateOrganizationUrl="/organization/:id"
-        afterLeaveOrganizationUrl="/select-org"
-        afterSelectOrganizationUrl="organization/:id"
-        appearance={{
-            elements:{
-                rootBox:{
-                    display: "flex",
-                    justifyContent: "center",
-                    alignItems: "center",
-                }
-            }
-        }}
+          hidePersonal
+          afterCreateOrganizationUrl="/organization/:id"
+          afterLeaveOrganizationUrl="/select-org"
+          afterSelectOrganizationUrl="organization/:id"
+          appearance={{
+            elements: {
+              rootBox: {
+                display: "flex",
+                justifyContent: "center",
+                alignItems: "center",
+              },
+            },
+          }}
         />
-        <UserButton 
-        afterSignOutUrl="/"
-        appearance={{
-            elements:{
-                avatarBox:{
-                    height: "30",
-                    width: "30",
-                }
-            }
-        }}
+        <UserButton
+          afterSignOutUrl="/"
+          appearance={{
+            elements: {
+              avatarBox: {
+                height: "30",
+                width: "30",
+              },
+            },
+          }}
         />
       </div>
     </nav>
