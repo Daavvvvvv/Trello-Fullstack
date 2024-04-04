@@ -25,7 +25,7 @@ export const Navbar = () => {
           hidePersonal
           afterCreateOrganizationUrl="/organization/:id"
           afterLeaveOrganizationUrl="/select-org"
-          afterSelectOrganizationUrl="organization/:id"
+          afterSelectOrganizationUrl="/organization/:id"
           appearance={{
             elements: {
               rootBox: {
@@ -41,8 +41,8 @@ export const Navbar = () => {
           appearance={{
             elements: {
               avatarBox: {
-                height: "30",
-                width: "30",
+                height: 30,
+                width: 30,
               },
             },
           }}
