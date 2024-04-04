@@ -45,15 +45,39 @@ export const Sidebar = ({ storageKey = "t-sidebar-state" }: SidebarProps) => {
     }));
   };
 
-  if(!isLoadedOrg || !isLoadedOrgList || userMemberships.isLoading) {
+  if (!isLoadedOrg || !isLoadedOrgList || userMemberships.isLoading) {
     return (
-        <>
-            <Skeleton className="h-16 w-16 rounded-full" />
-        </>
-    )
+      <>
+        <Skeleton className="h-16 w-16 rounded-full" />
+      </>
+    );
   }
 
-  return <div>Sidebar</div>;
+  return (
+    <>
+      <div className="font-medium text-sx flex items-center mb-1">
+        <span className="pl-4">Workspaces</span>
+        <Button
+          asChild
+          type="button"
+          size="icon"
+          variant="ghost"
+          className="ml-auto">
+          <Link href="/select-org">
+            <Plus className="h-4 w-4" />
+          </Link>
+        </Button>
+      </div>
+      <Accordion
+        type="multiple"
+        defaultValue={defaultAccordioValue}
+        className="space-y-2">
+        {userMemberships.data.map(({ organization }) => (
+          <p key={organization.id}>{organization.id}</p>
+        ))}
+      </Accordion>
+    </>
+  );
 };
 
 export default Sidebar;
