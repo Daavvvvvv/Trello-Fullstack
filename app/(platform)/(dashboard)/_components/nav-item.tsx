@@ -59,13 +59,11 @@ export const NavItem = ({
   };
 
   return (
-    <AccordionItem
-      value={organization.id}
-      className="flex items-center justify-between w-full">
+    <AccordionItem value={organization.id} className="border-none">
       <AccordionTrigger
         onClick={() => onExpand(organization.id)}
         className={cn(
-          "flex items-center gap-x-2 p-1.5 text-neutral-700 rounded-md hover:bg-neutral-500/10 transition text-start no-underline hover:no-underline w-full",
+          "flex items-center gap-x-2 p-1.5 text-neutral-700 rounded-md hover:bg-neutral-500/10 transition text-start no-underline hover:no-underline",
           isActive && !isExpanded && "bg-sky-500/10 text-sky-700"
         )}>
         <div className="flex items-center gap-x-2">
@@ -73,8 +71,8 @@ export const NavItem = ({
             <Image
               fill
               src={organization.imageUrl}
-              alt={organization.name}
-              className="rounded-full object-cover"
+              alt="Organization"
+              className="rounded-sm object-cover"
             />
           </div>
           <span className="font-medium text-sm">{organization.name}</span>
@@ -86,11 +84,11 @@ export const NavItem = ({
             key={route.href}
             size="sm"
             onClick={() => onClick(route.href)}
-            className={cn("w-full font-normal justify-start pl-10 mb-1",
+            className={cn(
+              "w-full font-normal justify-start pl-10 mb-1",
               pathname === route.href && "bg-sky-500/10 text-sky-700"
             )}
-            variant="ghost"
-          >
+            variant="ghost">
             {route.icon}
             {route.label}
           </Button>
